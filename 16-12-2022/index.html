@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Greta Tomasoni</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22> <text y=%22.9em%22 font-size=%2290%22>🥳</text></svg>"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 class="header_title">Greta Tomasoni &#169; 2022</h1>
+      <div class="header_button">
+        <a
+          href="https://www.linkedin.com/in/greta-tomasoni-07a258198/"
+          target="_blank"
+          ><button class="button">LinkedIn</button></a
+        >
+        <form
+          action="mailto:greta51198@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <input class="button button_email" type="submit" value="Email" />
+        </form>
+      </div>
+      <hr class="header_line" />
+    </header>
+    <main>
+      <div class="presentation">
+        <div class="presentation_work">
+          <p class="presentation_work_left">Graphic Designer</p>
+          <p class="presentation_work_right">and Frontend Developer</p>
+        </div>
+        <hr />
+        <div class="presentation_city">
+          <p>Based in Milan</p>
+        </div>
+        <hr />
+        <div class="presentation_graduation">
+          <p>Graduated at NABA - Nuova Accademia Belle Arti</p>
+        </div>
+        <hr />
+      </div>
+      <div class="work">
+        <h2 class="work_title">Selected<br />Projects</h2>
+        <div class="projects">
+          <div class="project_work">
+            <div class="project_work_text">
+              <p class="project_work_left">Planet Farms</p>
+              <p class="project_work_right">web development: Uprising</p>
+            </div>
+            <a href="https://www.planetfarms.ag/it" target="_blank"
+              ><img class="project_img" src="./img/arrow.png" alt="icon arrow"
+            /></a>
+          </div>
+          <hr />
+          <div class="project_work">
+            <div class="project_work_text">
+              <p class="project_work_left">Next Project</p>
+            </div>
+            <img class="project_img" src="./img/arrow.png" alt="icon arrow" />
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div class="photos">
+        <h2 class="photos_title">Photos</h2>
+        <div class="photo_gallery">
+          <img
+            src="https://picsum.photos/310/550?random=1"
+            alt="img casuale per portfolio"
+          />
+          <img
+            src="https://picsum.photos/310/550?random=2"
+            alt="img casuale per portfolio"
+          />
+          <img
+            src="https://picsum.photos/310/550?random=3"
+            alt="img casuale per portfolio"
+          />
+          <img
+            src="https://picsum.photos/310/550?random=4"
+            alt="img casuale per portfolio"
+          />
+        </div>
+      </div>
+      <div class="contact">
+        <h2 class="contact_title">Contact me</h2>
+        <form class="container">
+          <label for="fname">First Name</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Your name..."
+            required
+          />
+
+          <label for="lname">Last Name</label>
+          <input
+            type="text"
+            id="lname"
+            name="lastname"
+            placeholder="Your last name..."
+            required
+          />
+
+          <label for="country">Country</label>
+          <select id="country" name="country" required>
+            <option value="" disabled selected hidden>
+              Select your country
+            </option>
+            <option value="italy">Italy</option>
+            <option value="usa">USA</option>
+            <option value="usa">Denmark</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea
+            id="subject"
+            name="subject"
+            placeholder="Write something..."
+            style="height: 200px"
+          ></textarea>
+
+          <input class="button button_submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      <hr />
+      <img
+        class="footer_monogram"
+        src="./img/monogram.png"
+        alt="personal monogram with letter g and t"
+      />
+    </footer>
+  </body>
+</html>
