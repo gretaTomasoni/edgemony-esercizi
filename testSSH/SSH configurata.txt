@@ -1,0 +1,2 @@
+SSH configurata.
+Sono riuscita a clonare un progetto.
