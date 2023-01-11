@@ -11,7 +11,7 @@ let descriptionHeroElm = document.createElement("p");
 heroElm.className = "hero";
 
 imgHeroElm.className = "hero_img";
-imgHeroElm.setAttribute("src", "../img/hero.jpg");
+imgHeroElm.setAttribute("src", "./img/hero.jpg");
 
 textHeroElm.className = "hero_text";
 
