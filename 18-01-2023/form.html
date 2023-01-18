@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>18-01-2023</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="posts.js" type="module"></script>
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html"><h1>HOME</h1></a>
+      <a href="form.html" class="color"><h1>FORM</h1></a>
+      <img class="cart_button" src="./img/cart_black.png" alt="cart image" />
+      <!-- <span class="button_counter"></span> -->
+      <div class="tendina"></div>
+    </header>
+    <form id="postForm" class="form">
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="ad es 'MacBook Pro 2020'"
+        required
+      />
+      <label for="price">Price:</label>
+      <input id="price" type="number" min="1" step="any" placeholder="0,00 €" />
+
+      <label for="category">Category:</label>
+      <input
+        id="category"
+        type="number"
+        min="1"
+        step="any"
+        placeholder="ad es '2'"
+      />
+
+      <!-- <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected hidden>Select your category</option>
+        <option value="tech">Tech</option>
+        <option value="food">Food</option>
+        <option value="book">Book</option>
+      </select> -->
+
+      <label for="image">URL image:</label>
+      <input id="image" type="text" />
+
+      <label for="description">Description:</label>
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Write something..."
+        style="height: 200px"
+      ></textarea>
+
+      <input class="button button_submit" type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
