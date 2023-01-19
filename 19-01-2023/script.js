@@ -77,7 +77,9 @@ const cartCreation = () => {
   cart.forEach((item, index) => {
     const cartEl = document.createElement("div");
     cartEl.className = "cart_element";
-    cartEl.innerHTML = `<p>${item.title}</p><p class="cart_price">€ ${item.price}</p><hr class="line">`;
+    cartEl.innerHTML = `<p>${item.title}</p><p class="cart_price">€ ${
+      item.price * item.qty
+    }</p><hr class="line">`;
 
     const quantityEl = document.createElement("p");
     quantityEl.className = "quantityEl";
