@@ -1,10 +1,13 @@
-const productsElement = document.querySelector(".productsList");
+// const productsElement = document.querySelector(".productsList");
 const loader = document.querySelector(".spinner");
 const cartBtn = document.querySelector(".cart_button");
 const tendina = document.querySelector(".tendina");
 const textEmptyCart = document.createElement("p");
 tendina.appendChild(textEmptyCart);
 const totalQty = document.createElement("h3");
+
+const select = document.querySelector("#categorySelect");
+let listaProdotti;
 
 const cart = [];
 
@@ -18,13 +21,9 @@ cartBtn.addEventListener("click", () => {
 fetch("https://api.escuelajs.co/api/v1/products")
   .then((res) => res.json())
   .then((data) => {
-    const newData = data;
-    let listaProdotti = data;
-
-    // let listaProdotti = data;
-    // const newData = data.filter((item) => item.category.id === 1);
-    console.log(newData);
-    dataManupulation(newData, ".products");
+    listaProdotti = data;
+    console.log(listaProdotti);
+    dataManupulation(listaProdotti, ".productsList");
   })
   .catch((error) => {
     console.log("MIO ERRORE: ", error);
@@ -32,6 +31,9 @@ fetch("https://api.escuelajs.co/api/v1/products")
 
 const dataManupulation = (element, divId) => {
   loader.style = "display: none";
+  const divDaAppendere = document.querySelector(divId);
+  divDaAppendere.innerHTML = "";
+
   element.forEach((item) => {
     const cardContainer = document.createElement("div");
     cardContainer.className = "card";
@@ -78,7 +80,10 @@ const dataManupulation = (element, divId) => {
       priceElement,
       btnElement
     );
-    productsElement.appendChild(cardContainer);
+
+    divDaAppendere.appendChild(cardContainer);
+
+    // productsElement.appendChild(cardContainer);
   });
 };
 
@@ -208,9 +213,6 @@ const sum = () => {
 
 // TODO: FILTRARE PER CATEGORIE
 
-const select = document.querySelector("#categorySelect");
-let listaProdotti;
-
 const metodoGetCat = () => {
   fetch("https://api.escuelajs.co/api/v1/categories/")
     .then((res) => res.json())
@@ -230,14 +232,15 @@ const creazioneSelectCategories = (arrayCat) => {
   });
 };
 
-const filterByCategory = (idCat) => {
-  const fiteredProducts = listaProdotti.filter(
-    (item) => item.category.id === parseInt(idCat)
-  );
-  dataManupulation(fiteredProducts, ".products");
-};
-
 select.addEventListener("change", (e) => {
   console.log(select.value);
   filterByCategory(select.value);
 });
+
+const filterByCategory = (idCat) => {
+  const fiteredProducts = listaProdotti.filter(
+    (item) => item.category.id === parseInt(idCat)
+  );
+  console.log(fiteredProducts);
+  dataManupulation(fiteredProducts, ".productsList");
+};
