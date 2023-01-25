@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "title": "Dua Lipa Tee",
+      "price": 24.9,
+      "image": "./img/duaLipaTee.png",
+      "color": ["black"],
+      "category": "t shirt"
+    },
+    {
+      "title": "Disco Tee",
+      "price": 24.9,
+      "image": "./img/discoTee.png",
+      "color": ["white"],
+      "category": "t shirt"
+    },
+    {
+      "title": "Music Tee",
+      "price": 19.9,
+      "image": "./img/musicTee.png",
+      "color": ["black", "white"],
+      "category": "t shirt"
+    },
+    {
+      "title": "Classic Tee",
+      "price": 14.9,
+      "image": "./img/classicTee.png",
+      "color": ["black", "yellow"],
+      "category": "t shirt"
+    },
+    {
+      "title": "Break my heart",
+      "price": 14.9,
+      "image": "./img/posterDua.png",
+      "category": "poster"
+    },
+    {
+      "title": "Save your tears",
+      "price": 14.9,
+      "image": "./img/poster2.png",
+      "category": "poster"
+    }
+  ]
+}

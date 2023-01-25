@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.user_info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  position: relative;
+}
+
+.card_color {
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+/* .card_color_2 {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  margin-left: 20px;
+  position: absolute;
+  bottom: 10;
+} */
+
+.card_title {
+  text-decoration: underline;
+  margin-bottom: 5px;
+}
+
+.age-status-bar {
+  height: 40px;
+  width: 600px;
+  display: flex;
+  gap: 20px;
+  border: 1px, solid, black;
+  margin: 30px;
+}
