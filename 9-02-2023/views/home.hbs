@@ -1,0 +1,22 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> {{titolo}} </title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    {{> header }}
+    <div class="presentation">
+    <div class="text left">WELCOME</div>
+    <div class="text right">I'M</div>
+    <div class="text left">GRETA</div>
+    </div>
+    <div class="wrapper">
+      <p>My name is {{nome}} {{cognome}}.</p>
+      <p>Here my preferences: {{myPreferences.pet}}, {{myPreferences.color}}, {{myPreferences.season}}.</p>
+    </div>
+    {{> footer }}
+  </body>
+</html>
