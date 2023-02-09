@@ -48,7 +48,7 @@ app.get("/mi-presento", (req, res) => {
   });
 });
 
-//! POST PER FORM ---- non funziona
+//! POST PER FORM
 app.post("/login", (req, res) => {
   const { name } = req.body;
   if (name) {
