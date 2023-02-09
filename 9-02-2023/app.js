@@ -8,6 +8,9 @@ app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials");
 app.use(express.static("public"));
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.get("/", (req, res) => {
   res.render("home", {
     nome: "Greta",
@@ -49,10 +52,8 @@ app.get("/mi-presento", (req, res) => {
 app.post("/login", (req, res) => {
   const { name } = req.body;
   if (name) {
-    // return res.status(200).render(`Benvenuto/a ${name}`);
-    return res.status(200).render("login", {
-      nome: name,
-    });
+    // return res.status(200).render("login", `Benvenuto/a ${name}`);
+    return res.status(200).send(`Benvenuto/a ${name}`);
   }
   res.status(400).send("per favore, aggiungi il dato");
 });
