@@ -52,7 +52,9 @@ app.get("/mi-presento", (req, res) => {
 app.post("/login", (req, res) => {
   const { name } = req.body;
   if (name) {
-    return res.status(200).render("login", { risposta: `Benvenuto/a ${name}` });
+    return res
+      .status(200)
+      .render("login", { risposta: `Benvenuto/a ${name}`, titolo: "Login" });
   }
   res.status(400).send("per favore, aggiungi il dato");
 });
