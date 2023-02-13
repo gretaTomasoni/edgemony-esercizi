@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 const session = require("cookie-session");
 
 router.use(express.static("./public"));
-router.use(session({ secret: "la mia sessione" }));
 router.use(bodyParser.urlencoded({ extended: true }));
+router.use(session({ secret: "la mia sessione" }));
 
 hbs.registerPartials(__dirname + "/views/partials");
 
@@ -65,31 +65,31 @@ router.post("/login", (req, res) => {
   }
 });
 
-const checLogin = (req, res, next) => {
+//creo una funzione di controllo per proteggere dall'esterno la mia pagina privata
+function checkPage(req, res, next) {
   if (req.session.user) {
     next();
   } else {
-    res.redirect("warning");
+    res.redirect("/warning");
   }
-};
-
-router.get("/profilo", checLogin, (req, res) => {
+}
+router.get("/profilo", checkPage, (req, res) => {
   res.render("profilo", {
     titolo: "Profilo",
   });
+});
+
+//per il logout è necessario svuotare/annullare la sessione
+router.get("/logout", (req, res) => {
+  console.log("hai fatto logout");
+  req.session = null;
+  res.redirect("/login");
 });
 
 router.get("/warning", (req, res) => {
   res.render("warning", {
     titolo: "Warning",
   });
-});
-
-router.get("/logout", (req, res) => {
-  res.render("index", {
-    titolo: "Home Page",
-  });
-  console.log("Hai effettuato il logout con successo");
 });
 
 router.get("*", (req, res) => {

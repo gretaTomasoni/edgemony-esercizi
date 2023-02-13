@@ -15,7 +15,7 @@ app.use("/profilo", router);
 app.use("/warning", router);
 app.use("/logout", router);
 
-const PORT = 3000;
+const PORT = 4040;
 
 app.listen(PORT, () => {
   console.log(`Server attivo sulla porta ${PORT}`);
