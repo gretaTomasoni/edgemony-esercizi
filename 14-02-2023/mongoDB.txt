@@ -64,6 +64,7 @@ db.posts.deleteOne({titolo:"articolo 4"})
 CANCELLAZIONE DI PIU’ RECORD
 db.posts.deleteMany({titolo:"articolo 34"})
 
+
 /////////////////////////////
 MOSTRARE TUTTI I DATABASE
 show databases
