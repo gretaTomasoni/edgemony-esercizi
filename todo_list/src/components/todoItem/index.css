@@ -21,6 +21,11 @@
   fill: blue;
 }
 
+.done_element {
+  text-decoration-line: line-through;
+  text-decoration-thickness: 1px;
+}
+
 .TodoItem_deleteButton {
   color: blue;
   cursor: pointer;

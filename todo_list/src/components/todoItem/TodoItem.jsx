@@ -31,7 +31,7 @@ const TodoItem = ({ arr, setArr, todo }) => {
           onClick={onHandleClick}
           className={`TodoItem_emptyCircle ${isEmpty && "fill"}`}
         />
-        <p>{todo.text}</p>
+        <p className={isEmpty && "done_element"}>{todo.text}</p>
       </div>
       <FiX onClick={deleteFunc} className="TodoItem_deleteButton" />
     </div>
