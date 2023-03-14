@@ -10,17 +10,20 @@ const TodoList = () => {
 
   const pushArray = (e) => {
     e.preventDefault();
-    if (value != "") {
+    if (
+      value != "" &&
+      !arr.find((item) => item.text.toLowerCase() === value.toLowerCase())
+    ) {
       setArr([
-        ...arr,
         {
           id: Date.now(),
-          text: value,
+          text: value.charAt(0).toUpperCase() + value.slice(1),
         },
+        ...arr,
       ]);
+    } else alert("Todo already present!");
 
-      setValue("");
-    }
+    setValue("");
   };
 
   return (
