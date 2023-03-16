@@ -1,0 +1,10 @@
+.ListProducts {
+  padding-top: 120px;
+}
+
+.ListProducts__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  justify-content: center;
+}

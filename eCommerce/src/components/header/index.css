@@ -1,0 +1,24 @@
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 -1px #ddd inset;
+  z-index: 2;
+  padding: 0px 50px;
+}
+
+.Header_logo {
+  height: 45px;
+}
+
+.icons {
+  font-size: 20px;
+  cursor: pointer;
+}

@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ProductModal {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: 2300px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #efefef;
+}
+
+.ProductModal__images {
+  padding-left: 6%;
+  width: 60%;
+}
+
+.ProductModal__images img {
+  width: 100%;
+}
+
+.ProductModal__info {
+  width: 26%;
+  font-family: "Inconsolata", monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 50px;
+  padding-left: 60px;
+}
+
+.ProductModal__title {
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  line-height: 1.65;
+  color: #1c1b1b;
+}
+
+.ProductModal__price {
+  font-weight: 400;
+  font-size: 16px;
+  color: #6a6a6a;
+}
+
+.name_category {
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.category_information {
+  font-size: 13px;
+  font-weight: 300;
+  color: #1c1b1b;
+  line-height: 1.6;
+}
+
+.button__addToCart {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 11px;
+  text-align: center;
+  letter-spacing: 0.2em;
+  font-family: Inconsolata, sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.ProductModal__close {
+  position: absolute;
+  right: 47.5px;
+  top: 50px;
+  cursor: pointer;
+  padding: 5px;
+}

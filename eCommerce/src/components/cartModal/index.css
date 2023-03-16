@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.CartModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.CartModal_overlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: #363636;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.CartModal_content {
+  position: absolute;
+  overflow-y: scroll;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 400px;
+  background-color: #efefef;
+}
+
+.CartModal_header {
+  position: fixed;
+  top: 0;
+  background-color: #efefef;
+  width: 400px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 6;
+}
+
+.Cart__listProduct {
+  position: absolute;
+  overflow-y: scroll;
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.CartModal__close {
+  cursor: pointer;
+  padding: 5px;
+}

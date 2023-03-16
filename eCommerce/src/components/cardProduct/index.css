@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.CardProduct {
+  width: 290px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CardProduct img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.CardProduct__text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding-top: 20px;
+}
+
+.CardProduct__text-content h4 {
+  font-family: "Inconsolata", monospace;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  line-height: 1.65;
+  text-align: center;
+  color: #1c1b1b;
+  cursor: pointer;
+}
+
+.CardProduct__text-content p {
+  font-family: "Inconsolata", monospace;
+  font-size: 11px;
+  color: #676767;
+}
