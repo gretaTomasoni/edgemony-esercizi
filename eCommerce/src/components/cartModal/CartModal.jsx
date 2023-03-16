@@ -18,7 +18,10 @@ const CartModal = ({ modalCartContext, setModalCartContext }) => {
         </div>
         <div className="Cart__listProduct">
           {modalCartContext.productInfo.map((product) => (
-            <CartSingleProduct product={product} />
+            <CartSingleProduct
+              product={product}
+              setModalCartContext={setModalCartContext}
+            />
           ))}
         </div>
       </div>
