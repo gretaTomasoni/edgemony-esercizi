@@ -22,7 +22,7 @@ const ProductModal = ({
     );
 
     setModalCartContext({
-      productInfo: localStorageCartItems,
+      productInfo: [...localStorageCartItems, productData],
       isVisible: true,
     });
   };
