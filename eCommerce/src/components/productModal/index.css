@@ -84,6 +84,11 @@
   display: none;
 }
 
+.selected {
+  border: 1px solid #1c1b1b;
+  background-color: red;
+}
+
 .name_category {
   font-weight: 700;
   font-size: 14px;

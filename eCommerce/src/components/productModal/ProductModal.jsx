@@ -7,9 +7,12 @@ const ProductModal = ({
   setModalCartContext,
   setSelectedSize,
 }) => {
+  const [selectedOption, setSelectedOption] = useState("");
+
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
     productData.selectedSize = e.target.value;
+    setSelectedOption(e.target.value);
   };
 
   const closeModalProduct = () => {
@@ -62,7 +65,7 @@ const ProductModal = ({
           <div className="size">
             <span className="size__text">Size:</span>
             <ul className="size_list">
-              <li>
+              <li className={selectedOption === "Small" ? "selected" : ""}>
                 <label for="Small">Small</label>
                 <input
                   className="size_input"
@@ -73,7 +76,7 @@ const ProductModal = ({
                   onChange={handleSizeChange}
                 />
               </li>
-              <li>
+              <li className={selectedOption === "Medium" ? "selected" : ""}>
                 <label for="Medium">Medium</label>
                 <input
                   className="size_input"
@@ -84,7 +87,7 @@ const ProductModal = ({
                   onChange={handleSizeChange}
                 />
               </li>
-              <li>
+              <li className={selectedOption === "Large" ? "selected" : ""}>
                 <label for="Large">Large</label>
                 <input
                   className="size_input"
@@ -95,7 +98,7 @@ const ProductModal = ({
                   onChange={handleSizeChange}
                 />
               </li>
-              <li>
+              <li className={selectedOption === "XL" ? "selected" : ""}>
                 <label for="XL">XL</label>
                 <input
                   className="size_input"
@@ -106,7 +109,7 @@ const ProductModal = ({
                   onChange={handleSizeChange}
                 />
               </li>
-              <li>
+              <li className={selectedOption === "2XL" ? "selected" : ""}>
                 <label for="2XL">2XL</label>
                 <input
                   className="size_input"
