@@ -4,16 +4,21 @@ import CardProduct from "../cardProduct";
 import ProductModal from "../productModal";
 import "./index.css";
 
-const ListProducts = ({ setModalCartContext }) => {
+const ListProducts = ({ setModalCartContext, setSelectedSize }) => {
   const [modalContext, setModalContext] = useState({
     productData: {},
     isVisibile: false,
   });
 
+  const newArrProductList = productsList.map((product) => ({
+    ...product,
+    qty: 1,
+  }));
+
   return (
     <div className="ListProducts">
       <div className="ListProducts__list">
-        {productsList.map((product) => (
+        {newArrProductList.map((product) => (
           <CardProduct
             productData={product}
             setModalContext={setModalContext}
@@ -25,6 +30,7 @@ const ListProducts = ({ setModalCartContext }) => {
           productData={modalContext.productData}
           setModalContext={setModalContext}
           setModalCartContext={setModalCartContext}
+          setSelectedSize={setSelectedSize}
         />
       )}
     </div>

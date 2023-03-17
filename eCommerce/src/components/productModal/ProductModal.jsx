@@ -1,10 +1,16 @@
+import { useState } from "react";
 import "./index.css";
 
 const ProductModal = ({
   productData,
   setModalContext,
   setModalCartContext,
+  setSelectedSize,
 }) => {
+  const handleSizeChange = (e) => {
+    setSelectedSize(e.target.value);
+  };
+
   const closeModalProduct = () => {
     setModalContext({
       productData: productData,
@@ -12,56 +18,114 @@ const ProductModal = ({
     });
   };
 
-  const addProduct = () => {
+  const addProduct = (e) => {
+    e.preventDefault();
+
     const localStorageCartItems =
       JSON.parse(localStorage.getItem("cartList")) || [];
 
-    localStorage.setItem(
-      "cartList",
-      JSON.stringify([...localStorageCartItems, productData])
+    const isProductDataInsideLocalStorage = !localStorageCartItems.find(
+      (product) => product.id === productData.id
     );
 
-    setModalCartContext({
-      productInfo: [...localStorageCartItems, productData],
-      isVisible: true,
-    });
+    if (isProductDataInsideLocalStorage) {
+      localStorage.setItem(
+        "cartList",
+        JSON.stringify([...localStorageCartItems, productData])
+      );
+    } else {
+      alert(`${productData.title} is already in the cart`);
+    }
+
+    if (isProductDataInsideLocalStorage) {
+      setModalCartContext({
+        productInfo: [...localStorageCartItems, productData],
+        isVisible: true,
+      });
+    }
   };
 
   return (
     <div className="ProductModal">
       <div className="ProductModal__images">
-        <img src={productData.images[0]} alt="" />
+        {productData.images.map((image) => (
+          <img src={image} alt="product image" />
+        ))}
       </div>
       <div className="ProductModal__info">
         <h3 className="ProductModal__title">
           {productData.title} - {productData.color}
         </h3>
         <span className="ProductModal__price">€{productData.price}</span>
-        <div className="size">
-          <span className="size__text">Size:</span>
-          <ul>
-            <li>Small</li>
-            <li>Medium</li>
-            <li>Large</li>
-            <li>XL</li>
-            <li>2XL</li>
-          </ul>
-        </div>
-        <div className="quantity">
-          <span className="quantity__text">Quantity:</span>
-          <div>
-            <span> - </span>
-            <input type="text" pattern="[0-9]*" name="quantity" />
-            <span> + </span>
+        <form onSubmit={addProduct} className="ProductModal__form">
+          <div className="size">
+            <span className="size__text">Size:</span>
+            <ul className="size_list">
+              <li>
+                <label for="Small">Small</label>
+                <input
+                  className="size_input"
+                  name="size"
+                  id="Small"
+                  type="radio"
+                  value={"Small"}
+                  onChange={handleSizeChange}
+                />
+              </li>
+              <li>
+                <label for="Medium">Medium</label>
+                <input
+                  className="size_input"
+                  name="size"
+                  id="Medium"
+                  type="radio"
+                  value={"Medium"}
+                  onChange={handleSizeChange}
+                />
+              </li>
+              <li>
+                <label for="Large">Large</label>
+                <input
+                  className="size_input"
+                  name="size"
+                  id="Large"
+                  type="radio"
+                  value={"Large"}
+                  onChange={handleSizeChange}
+                />
+              </li>
+              <li>
+                <label for="XL">XL</label>
+                <input
+                  className="size_input"
+                  name="size"
+                  id="XL"
+                  type="radio"
+                  value={"XL"}
+                  onChange={handleSizeChange}
+                />
+              </li>
+              <li>
+                <label for="2XL">2XL</label>
+                <input
+                  className="size_input"
+                  name="size"
+                  id="2XL"
+                  type="radio"
+                  value={"2XL"}
+                  onChange={handleSizeChange}
+                />
+              </li>
+            </ul>
           </div>
-        </div>
-        <button
-          onClick={addProduct}
-          className="button__addToCart"
-          type="submit"
-        >
-          ADD TO CART
-        </button>
+          <button
+            onClick={addProduct}
+            type="submit"
+            className="button__addToCart"
+          >
+            ADD TO CART
+          </button>
+        </form>
         <div className="ProductModal__moreInfo">
           <p className="name_category">RP 2.0 1100G FRENCH TERRY</p>
           {productData.fabric.map((item) => (

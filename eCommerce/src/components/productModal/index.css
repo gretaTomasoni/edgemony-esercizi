@@ -49,6 +49,41 @@
   color: #6a6a6a;
 }
 
+.size__text {
+  font-size: 13px;
+}
+
+.ProductModal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.size_list {
+  list-style: none;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.size_list li {
+  border: 1px solid #6a6a6a;
+  display: inline;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.size_list label {
+  cursor: pointer;
+  font-size: 13px;
+  color: #6a6a6a;
+}
+
+.size_input {
+  /* display: none; */
+}
+
 .name_category {
   font-weight: 700;
   font-size: 14px;

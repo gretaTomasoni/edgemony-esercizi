@@ -10,15 +10,20 @@ function App() {
     productInfo: [],
     isVisible: false,
   });
+  const [selectedSize, setSelectedSize] = useState("Small");
 
   return (
     <div className="App">
       <Header setModalCartContext={setModalCartContext} />
-      <ListProducts setModalCartContext={setModalCartContext} />
+      <ListProducts
+        setModalCartContext={setModalCartContext}
+        setSelectedSize={setSelectedSize}
+      />
       {modalCartContext.isVisible && (
         <CartModal
           modalCartContext={modalCartContext}
           setModalCartContext={setModalCartContext}
+          selectedSize={selectedSize}
         />
       )}
     </div>
