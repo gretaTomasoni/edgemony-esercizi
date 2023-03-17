@@ -71,8 +71,7 @@ const CartSingleProduct = ({ product, setModalCartContext, selectedSize }) => {
             {product.title.substr(0, 24)}
             <span className="dot">...</span>
           </p>
-          {console.log(selectedSize)}
-          <p className="CartSingleProduct_size">{selectedSize}</p>
+          <p className="CartSingleProduct_size">{product.selectedSize}</p>
           <p className="CartSingleProduct_price">€{product.price}</p>
         </div>
         <div className="CartSingleProduct_settings">

@@ -13,6 +13,7 @@ const ListProducts = ({ setModalCartContext, setSelectedSize }) => {
   const newArrProductList = productsList.map((product) => ({
     ...product,
     qty: 1,
+    selectedSize: "Small",
   }));
 
   return (

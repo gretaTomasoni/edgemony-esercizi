@@ -9,6 +9,7 @@ const ProductModal = ({
 }) => {
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
+    productData.selectedSize = e.target.value;
   };
 
   const closeModalProduct = () => {
