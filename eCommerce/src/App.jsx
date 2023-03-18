@@ -13,7 +13,7 @@ function App() {
   const [selectedSize, setSelectedSize] = useState("Small");
 
   return (
-    <div className="App">
+    <div className={`App ${modalCartContext.isVisible && "noScroll"}`}>
       <Header setModalCartContext={setModalCartContext} />
       <ListProducts
         setModalCartContext={setModalCartContext}

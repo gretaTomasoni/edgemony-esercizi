@@ -7,12 +7,19 @@ const ProductModal = ({
   setModalCartContext,
   setSelectedSize,
 }) => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("Small");
+  const [sizePresent, isSizePresent] = useState(
+    productData.size[0] === "Small" ? true : false
+  );
 
   const handleSizeChange = (e) => {
     setSelectedSize(e.target.value);
     productData.selectedSize = e.target.value;
     setSelectedOption(e.target.value);
+
+    productData.size.includes(e.target.value)
+      ? isSizePresent(true)
+      : isSizePresent(false);
   };
 
   const closeModalProduct = () => {
@@ -49,6 +56,10 @@ const ProductModal = ({
     }
   };
 
+  const soldOutProduct = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="ProductModal">
       <div className="ProductModal__images">
@@ -61,7 +72,10 @@ const ProductModal = ({
           {productData.title} - {productData.color}
         </h3>
         <span className="ProductModal__price">€{productData.price}</span>
-        <form onSubmit={addProduct} className="ProductModal__form">
+        <form
+          onSubmit={sizePresent ? addProduct : soldOutProduct}
+          className="ProductModal__form"
+        >
           <div className="size">
             <span className="size__text">Size:</span>
             <ul className="size_list">
@@ -123,11 +137,13 @@ const ProductModal = ({
             </ul>
           </div>
           <button
-            onClick={addProduct}
+            onClick={sizePresent ? addProduct : soldOutProduct}
+            className={`button__addToCart ${
+              sizePresent ? null : "disabled_button"
+            }`}
             type="submit"
-            className="button__addToCart"
           >
-            ADD TO CART
+            {sizePresent ? "ADD TO CART" : "SOLD OUT"}
           </button>
         </form>
         <div className="ProductModal__moreInfo">

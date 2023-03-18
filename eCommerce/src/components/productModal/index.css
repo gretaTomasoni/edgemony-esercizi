@@ -68,7 +68,7 @@
 }
 
 .size_list li {
-  border: 1px solid #6a6a6a;
+  border: 1px solid #cfcfcf;
   display: inline;
   padding: 6px 10px;
   cursor: pointer;
@@ -82,11 +82,23 @@
 
 .size_input {
   display: none;
+  appearance: auto;
+  writing-mode: horizontal-tb !important;
 }
 
 .selected {
-  border: 1px solid #1c1b1b;
-  background-color: red;
+  border: 1px solid #1c1b1b !important;
+}
+
+.selected label {
+  color: #1c1b1b !important;
+}
+
+.disabled_button {
+  background-color: transparent !important;
+  border: 1px solid #cfcfcf !important;
+  color: #6a6a6a !important;
+  cursor: not-allowed !important;
 }
 
 .name_category {

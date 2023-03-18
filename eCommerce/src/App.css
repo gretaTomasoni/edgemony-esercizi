@@ -2,3 +2,7 @@
   background-color: #efefef;
   padding-bottom: 80px;
 }
+
+.noScroll {
+  position: fixed;
+}
