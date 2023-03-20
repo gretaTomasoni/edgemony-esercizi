@@ -1,0 +1,41 @@
+.Hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  hr {
+    width: 98%;
+    border: 0;
+    border-bottom: 1px dotted #373737;
+    border-width: 3px;
+    margin-top: -8px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .Hero__second__list {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 50px;
+
+    li {
+      padding: 4px 8px;
+      cursor: pointer;
+      border-bottom: 1px solid black;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+    }
+
+    .active {
+      background-color: black;
+      color: white;
+    }
+  }
+}

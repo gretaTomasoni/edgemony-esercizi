@@ -1,0 +1,25 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+
+  ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    background-color: rgb(255, 255, 142);
+  }
+}
