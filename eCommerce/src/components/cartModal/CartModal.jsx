@@ -1,7 +1,14 @@
+import { useState } from "react";
 import CartSingleProduct from "../cartSingleProduct";
 import "./index.css";
 
 const CartModal = ({ modalCartContext, setModalCartContext, selectedSize }) => {
+  const [priceCheckout, setPriceCheckout] = useState(
+    modalCartContext.productInfo.reduce(
+      (acc, product) => acc + product.price * product.qty,
+      0
+    )
+  );
   const closeCartModal = () => {
     setModalCartContext({ productInfo: [], isVisible: false });
   };
@@ -27,7 +34,9 @@ const CartModal = ({ modalCartContext, setModalCartContext, selectedSize }) => {
                 <CartSingleProduct
                   product={product}
                   setModalCartContext={setModalCartContext}
-                  selectedSize={selectedSize}
+                  priceCheckout={priceCheckout}
+                  setPriceCheckout={setPriceCheckout}
+                  key={product.title}
                 />
               ))}
             </div>
@@ -36,10 +45,7 @@ const CartModal = ({ modalCartContext, setModalCartContext, selectedSize }) => {
                 Shipping & taxes calculated at checkout.
               </p>
               <button onClick={closeCartModal} className="CartModal__close">
-                CHECKOUT · €
-                {modalCartContext.productInfo
-                  .reduce((acc, product) => acc + product.price, 0)
-                  .toFixed(2)}
+                CHECKOUT · €{priceCheckout.toFixed(2)}
               </button>
             </div>
           </div>

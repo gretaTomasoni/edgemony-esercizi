@@ -23,6 +23,7 @@ const ListProducts = ({ setModalCartContext, setSelectedSize }) => {
           <CardProduct
             productData={product}
             setModalContext={setModalContext}
+            key={product.id}
           />
         ))}
       </div>

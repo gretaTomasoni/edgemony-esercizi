@@ -14,6 +14,7 @@ const Card = ({ data }) => {
 
     return ingredients;
   };
+
   return (
     <div className="Card">
       <img src={data.strDrinkThumb} alt={data.strDrink} />

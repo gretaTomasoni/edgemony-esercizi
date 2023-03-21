@@ -3,7 +3,12 @@ import { FiMinus, FiPlus } from "react-icons/fi";
 
 import "./index.css";
 
-const CartSingleProduct = ({ product, setModalCartContext, selectedSize }) => {
+const CartSingleProduct = ({
+  product,
+  setModalCartContext,
+  priceCheckout,
+  setPriceCheckout,
+}) => {
   const [valueQty, setValueQty] = useState(product.qty);
 
   const plusQty = () => {
@@ -18,6 +23,7 @@ const CartSingleProduct = ({ product, setModalCartContext, selectedSize }) => {
     );
 
     localStorage.setItem("cartList", JSON.stringify(newLocalStorageCart));
+    setPriceCheckout(priceCheckout + product.price);
   };
 
   const lessQty = () => {
@@ -37,6 +43,7 @@ const CartSingleProduct = ({ product, setModalCartContext, selectedSize }) => {
     }
 
     localStorage.setItem("cartList", JSON.stringify([...newLocalStorageCart]));
+    setPriceCheckout(priceCheckout - product.price);
 
     setModalCartContext({
       productInfo: newLocalStorageCart,
@@ -60,6 +67,7 @@ const CartSingleProduct = ({ product, setModalCartContext, selectedSize }) => {
       productInfo: localStorageCartItems,
       isVisible: true,
     });
+    setPriceCheckout(priceCheckout - product.price * product.qty);
   };
 
   return (
