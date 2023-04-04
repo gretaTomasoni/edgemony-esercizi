@@ -17,7 +17,9 @@ export const globalReducer = (state, action) => {
 export const todoReducer = (todos, action) => {
   switch (action.type) {
     case "addTodo":
-      return [...todos, newTodo(action.payload.value)];
+      if (action.payload.value !== "") {
+        return [...todos, newTodo(action.payload.value)];
+      }
     case "toggleTodo":
       return todos.map((todo) => {
         if (todo.id === action.payload.id) {

@@ -12,14 +12,27 @@ const TodoList = () => {
     setValue("");
   };
 
-  //   console.log(state2);
+  console.log(state2);
 
   return (
     <div className="TodoList">
       <h3>TodoList:</h3>
+      <div>
+        <span>Tutti i task: </span>
+        <span>{state2.length || 0}</span>
+      </div>
+      <div>
+        <span>Task completati: </span>
+        <span>
+          {state2.reduce((acc, current) => {
+            current.complete && acc++;
+            return acc;
+          }, 0)}
+        </span>
+      </div>
       <form
         onSubmit={onHandleSubmit}
-        style={{ display: "flex", gap: 20, marginBottom: 20 }}
+        style={{ display: "flex", gap: 20, marginBottom: 20, marginTop: 20 }}
       >
         <input
           type="text"
