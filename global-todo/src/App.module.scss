@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .addTodo {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 30px;
+    left: calc(50% - 35px);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(184, 39, 194);
+    border-radius: 100%;
+    border: 0;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
