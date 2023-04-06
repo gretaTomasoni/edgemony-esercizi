@@ -1,0 +1,3 @@
+[submodule "blog_app"]
+	path = blog_app
+	url = https://github.com/gretaTomasoni/edgemony-esercizi
